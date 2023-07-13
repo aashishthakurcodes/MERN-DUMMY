@@ -22,8 +22,14 @@ const userData=require('./routes/userRoute')
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb+srv://at282844:h0yFucjnUc2UPqZf@cluster0.wsdbqz4.mongodb.net/newDatabase?retryWrites=true&w=majority');
- console.log("Mongoosse Connection Established");
+  try {
+    await mongoose.connect(
+      'mongodb+srv://at282844:h0yFucjnUc2UPqZf@cluster0.wsdbqz4.mongodb.net/newDatabase?retryWrites=true&w=majority'
+    );
+    console.log('Mongoose Connection Established');
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
+  }
 }
 
 
