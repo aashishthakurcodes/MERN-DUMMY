@@ -16,6 +16,7 @@ const mongoose = require('mongoose');
 const prodctControl =require('./Controller/ProductControl');
 const routes =require('./routes/router')
 const userData=require('./routes/userRoute')
+console.log(userData);
 
 
 //Mongoose Connection
